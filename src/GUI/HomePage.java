@@ -44,7 +44,7 @@ public class HomePage extends JPanel {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnNewButton_1_1.setBounds(456, 63, 179, 21);
+        btnNewButton_1_1.setBounds(456, 63, 195, 21);
         add(btnNewButton_1_1);
         
         JButton btnNewButton_1_2 = new JButton("Trends");
