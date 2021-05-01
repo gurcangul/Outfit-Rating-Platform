@@ -16,6 +16,7 @@ import java.awt.SystemColor;
 import javax.swing.JRadioButtonMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 
 public class MenuPanel extends JPanel {
 	  private static final long serialVersionUID = 1L;
@@ -35,33 +36,44 @@ public class MenuPanel extends JPanel {
 		        menuBar.setBounds(10, 10, 424, 22);
 		        add(menuBar);
 		        
-		        JMenu mnNewMenu = new JMenu("Home Page");
-		        menuBar.add(mnNewMenu);
-		        JMenu mnNewMenu2 = new JMenu("My Profile");
-		        menuBar.add(mnNewMenu2);
+		        /*JButton homePage = new JButton("Home Page");
+		        menuBar.add(homePage);*/
+		        JMenu home = new JMenu("Home");
+		        menuBar.add(home);
+		        JMenuItem homePage = new JMenuItem("Home Page");
+		        home.add(homePage);
 		        
-		        JMenu mnNewMenu_1 = new JMenu("My Collections");
-		        mnNewMenu2.add(mnNewMenu_1);
+		        homePage.addActionListener(new ActionListener() {
+		        	public void actionPerformed(ActionEvent e) {
+		        		HomePage homePage = new HomePage(mainFrame);
+		        		mainFrame.addMenuPanel(homePage);
+		        	}
+		        });
+
+		        JMenu myProfile = new JMenu("My Profile");
+		        menuBar.add(myProfile);
+		        
+		        
+		        JMenu myCollections = new JMenu("My Collections");
+		        myProfile.add(myCollections);
 		        
 		        JMenuItem mnıtmNewMenuItem_9 = new JMenuItem("See My Collections");
-		        mnNewMenu_1.add(mnıtmNewMenuItem_9);
+		        myCollections.add(mnıtmNewMenuItem_9);
 		        
 		        JMenuItem mnıtmNewMenuItem_10 = new JMenuItem("Add A Collection");
-		        mnNewMenu_1.add(mnıtmNewMenuItem_10);
+		        myCollections.add(mnıtmNewMenuItem_10);
 		        
 		        JMenuItem mnıtmNewMenuItem_11 = new JMenuItem("Remove A Collection");
-		        mnNewMenu_1.add(mnıtmNewMenuItem_11);
+		        myCollections.add(mnıtmNewMenuItem_11);
 		        
 
 		        
 		        JMenuItem mnıtmNewMenuItem_6 = new JMenuItem("Following");
-		        mnNewMenu2.add(mnıtmNewMenuItem_6);
+		        myProfile.add(mnıtmNewMenuItem_6);
 		        
 		        JMenuItem mnıtmNewMenuItem_7 = new JMenuItem("Followers");
-		        mnNewMenu2.add(mnıtmNewMenuItem_7);		        JMenuItem mnıtmNewMenuItem_5 = new JMenuItem("General Account Settings");
-		        mnNewMenu2.add(mnıtmNewMenuItem_5);
-		        JMenuItem mnıtmNewMenuItem = new JMenuItem("New menu item");
-		        mnNewMenu.add(mnıtmNewMenuItem);
+		        myProfile.add(mnıtmNewMenuItem_7);		        JMenuItem mnıtmNewMenuItem_5 = new JMenuItem("General Account Settings");
+		        myProfile.add(mnıtmNewMenuItem_5);
 		        
 		        JMenu mnNewMenu_2 = new JMenu("Collections");
 		        menuBar.add(mnNewMenu_2);
@@ -136,6 +148,12 @@ public class MenuPanel extends JPanel {
 		        
 		        JMenuItem mnıtmNewMenuItem_13 = new JMenuItem("About");
 		        mnNewMenu_4.add(mnıtmNewMenuItem_13);
+		        
+		        
+		        
+		        
+		        
+		        
 		        mnıtmNewMenuItem_13.addActionListener(new ActionListener() {
 		        	public void actionPerformed(ActionEvent e) {
 		        		AboutAppPanel aboutPanel = new AboutAppPanel(mainFrame);
