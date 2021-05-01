@@ -6,6 +6,7 @@ import java.awt.TextField;
 import java.awt.Label;
 import javax.swing.JTable;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import java.awt.Choice;
@@ -14,6 +15,10 @@ import javax.swing.JComboBox;
 import java.awt.ScrollPane;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.ComponentOrientation;
 import java.awt.Cursor;
@@ -25,6 +30,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Component;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.JButton;
 
 public class FeedbackPanel extends JPanel {
 
@@ -68,16 +74,26 @@ public class FeedbackPanel extends JPanel {
 		choice.add("Item 1");  
 		choice.add("Item 2");  
 		choice.add("Item 3");
+        
+        JButton btnNewButton = new JButton("Send");
+        add(btnNewButton, "cell 0 3");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		if(check(textArea))
+        		{
+	        		String toBewrite = label.getText() + "," + textArea.getText();
+		            try {
+						writeToFile(toBewrite);
+					} catch (IOException e1) {
+					}
+		            JOptionPane.showMessageDialog(null, "Your message is submitted. Thank you! ");
+		            textArea.setText("");
+        		}
+        		
+        	}
+        });
+        add(btnNewButton);
 		
-		Button button = new Button("Send");
-		add(button, "cell 0 3,alignx left,aligny top");
-		button.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-		button.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
 	}
 
 	public MainFrame getMainFrame() {
@@ -86,5 +102,30 @@ public class FeedbackPanel extends JPanel {
 
 	public void setMainFrame(MainFrame mainFrame) {
 		this.mainFrame = mainFrame;
+	}  
+	 private boolean check(TextArea textArea) {
+	        if (textArea.getText().length() <4 ) {
+	        	JOptionPane.showMessageDialog(null, "You cannot send messages of this length ");
+	        	//You cannot send messages of this length
+				return false;
+
+	        }
+	        else return true;
+	 }
+	
+	
+	private void writeToFile(String list) throws IOException{
+		File f = new File("feedback.txt");
+		FileWriter fw = new FileWriter(f,true);
+		try
+		{
+			BufferedWriter bw = new BufferedWriter(fw);
+		    bw.newLine();
+		    bw.write(list);
+		    bw.flush();
+		    bw.close();
+        }
+        catch(Exception e){
+        }
 	}
 }

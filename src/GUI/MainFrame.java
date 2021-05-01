@@ -23,7 +23,7 @@ public class MainFrame extends JFrame {
         
 		setBounds(100, 100, 450, 300);
 		setTitle("Outfit Rating Platform");
-        setSize(780, 517);
+        setSize(780, 443);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }

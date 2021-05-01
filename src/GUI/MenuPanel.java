@@ -81,6 +81,15 @@ public class MenuPanel extends JPanel {
 		        JMenu mnNewMenu_5 = new JMenu("Trends");
 		        mnNewMenu_5.setBackground(Color.WHITE);
 		        menuBar.add(mnNewMenu_5);
+		        
+		        JMenuItem mnıtmNewMenuItem_15 = new JMenuItem("The most liked");
+		        mnNewMenu_5.add(mnıtmNewMenuItem_15);
+		        
+		        JMenuItem mnıtmNewMenuItem_16 = new JMenuItem("The most disliked");
+		        mnNewMenu_5.add(mnıtmNewMenuItem_16);
+		        
+		        JMenuItem mnıtmNewMenuItem_17 = new JMenuItem("The most followed user");
+		        mnNewMenu_5.add(mnıtmNewMenuItem_17);
 		        //User user = new User();
 		        //user.getserName
 		        
