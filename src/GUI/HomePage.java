@@ -12,6 +12,15 @@ import java.awt.event.MouseEvent;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JLabel;
 import javax.swing.BoxLayout;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JButton;
+import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ImageIcon;
 
 public class HomePage extends JPanel {
 
@@ -20,19 +29,28 @@ public class HomePage extends JPanel {
 	  
 	public HomePage(MainFrame mainFrame) {
 		JPanel jP=  new JPanel(new GridLayout(3, 1));
-        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        setLayout(null);
         
-        JPopupMenu popupMenu = new JPopupMenu();
-        addPopup(this, popupMenu);
+        JButton btnNewButton = new JButton("Create Collection");
+        btnNewButton.setBounds(27, 63, 202, 21);
+        add(btnNewButton);
         
-        JCheckBoxMenuItem chckbxmnıtmNewCheckItem_1 = new JCheckBoxMenuItem("New check item");
-        popupMenu.add(chckbxmnıtmNewCheckItem_1);
+        JButton btnNewButton_1 = new JButton("See All Collections");
+        btnNewButton_1.setBounds(239, 63, 207, 21);
+        add(btnNewButton_1);
         
-        JCheckBoxMenuItem chckbxmnıtmNewCheckItem = new JCheckBoxMenuItem("New check item");
-        popupMenu.add(chckbxmnıtmNewCheckItem);
+        JButton btnNewButton_1_1 = new JButton("My Profile");
+        btnNewButton_1_1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	}
+        });
+        btnNewButton_1_1.setBounds(456, 63, 179, 21);
+        add(btnNewButton_1_1);
         
-        JLabel lblNewLabel = new JLabel("New label");
-        add(lblNewLabel);
+        JButton btnNewButton_1_2 = new JButton("Trends");
+        btnNewButton_1_2.setIcon(new ImageIcon("C:\\Users\\Gurcan\\eclipse-workspace\\G12_CENG431_HW3-v1\\src\\trends.png"));
+        btnNewButton_1_2.setBounds(285, 148, 109, 21);
+        add(btnNewButton_1_2);
 		this.setMainFrame(mainFrame);        
 
 		

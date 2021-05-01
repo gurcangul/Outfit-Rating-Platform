@@ -17,6 +17,7 @@ import javax.swing.JRadioButtonMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class MenuPanel extends JPanel {
 	  private static final long serialVersionUID = 1L;
@@ -29,7 +30,7 @@ public class MenuPanel extends JPanel {
 	public MenuPanel(MainFrame mainFrame) {
 				this.setMainFrame(mainFrame);        
 				JPanel jP=  new JPanel(new GridLayout(3, 1));
-		        setLayout(null);
+		        //setLayout(null);
 		        
 		        JMenuBar menuBar = new JMenuBar();
 		        menuBar.setBackground(Color.WHITE);
@@ -109,6 +110,7 @@ public class MenuPanel extends JPanel {
 		        menuBar.add(mnNewMenu_3);
 		        
 		        JMenuItem mnıtmNewMenuItem_8 = new JMenuItem("Log Out");
+		        mnıtmNewMenuItem_8.setIcon(new ImageIcon("C:\\Users\\Gurcan\\eclipse-workspace\\G12_CENG431_HW3-v1\\src\\logout.png"));
 		        mnıtmNewMenuItem_8.addActionListener(new ActionListener() {
 		        	@Override
 		            public void actionPerformed(ActionEvent e) {

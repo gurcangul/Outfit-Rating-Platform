@@ -23,7 +23,7 @@ public class MainFrame extends JFrame {
         
 		setBounds(100, 100, 450, 300);
 		setTitle("Outfit Rating Platform");
-        setSize(780, 443);
+        setSize(760, 460);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -34,14 +34,21 @@ public class MainFrame extends JFrame {
         revalidate();
         repaint();
     }
-    public void addMenuPanel(JPanel panel){
+    public void addMenu(){
     	getContentPane().removeAll();
-        getContentPane().add(menuPanel, BorderLayout.CENTER);
-    	
-        getContentPane().add(panel, BorderLayout.SOUTH);
+        getContentPane().add(menuPanel, BorderLayout.PAGE_START);
         revalidate();
         repaint();
     }
+    public void addMenuPanel(JPanel panel){
+    	addMenu();
+    	
+        getContentPane().add(panel, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
+    
+    
     public JFrame getFrame() {
         return this;
     }

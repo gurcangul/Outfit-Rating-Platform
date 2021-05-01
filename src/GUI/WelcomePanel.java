@@ -65,7 +65,7 @@ public class WelcomePanel extends JPanel{
         });
         btnNewButton_1.setForeground(Color.BLACK);
         btnNewButton_1.setBackground(Color.LIGHT_GRAY);
-        btnNewButton_1.setBounds(320, 408, 59, 21);
+        btnNewButton_1.setBounds(317, 392, 59, 21);
         add(btnNewButton_1);
     }
 
