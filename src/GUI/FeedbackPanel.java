@@ -24,6 +24,7 @@ import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Component;
+import net.miginfocom.swing.MigLayout;
 
 public class FeedbackPanel extends JPanel {
 
@@ -41,41 +42,41 @@ public class FeedbackPanel extends JPanel {
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		this.setMainFrame(mainFrame);
-		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		TextArea textArea = new TextArea();
-		add(textArea);
+		setLayout(new MigLayout("", "[50px][66px][50px]", "[50px][][][][][]"));
 		
 		Label label = new Label("User Name");
-		add(label);
+		add(label, "cell 0 0,alignx left,aligny top");
 		
 		TextField textField = new TextField();
-		add(textField);
+		add(textField, "cell 1 0,alignx left,aligny top");
 		textField.setText("name");
 		textField.setEditable(false);
 		textField.setEnabled(false);
 		
 		Label label_1 = new Label("Message");
-		add(label_1);
+		add(label_1, "cell 0 1,alignx left,aligny top");
 		
-		final Choice choice = new Choice();
-		add(choice);
+		TextArea textArea = new TextArea();
+		add(textArea, "cell 1 1,alignx left,aligny top");
 		
 		Label label_1_1 = new Label("Subject");
-		add(label_1_1);
+		add(label_1_1, "cell 0 2,alignx left,aligny top");
+		
+		final Choice choice = new Choice();
+		add(choice, "cell 1 2,alignx left,aligny top");
+		
+		choice.add("Item 1");  
+		choice.add("Item 2");  
+		choice.add("Item 3");
 		
 		Button button = new Button("Send");
-		add(button);
+		add(button, "cell 0 3,alignx left,aligny top");
 		button.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		button.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		
-		choice.add("Item 1");  
-		choice.add("Item 2");  
-		choice.add("Item 3");
 
 	}
 

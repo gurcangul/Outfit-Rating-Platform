@@ -5,7 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
-
+	MenuPanel menuPanel=new MenuPanel(this);
+	
     /**
 	 * 
 	 */
@@ -22,7 +23,7 @@ public class MainFrame extends JFrame {
         
 		setBounds(100, 100, 450, 300);
 		setTitle("Outfit Rating Platform");
-        setSize(780, 480);
+        setSize(780, 517);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -34,6 +35,9 @@ public class MainFrame extends JFrame {
         repaint();
     }
     public void addMenuPanel(JPanel panel){
+    	getContentPane().removeAll();
+        getContentPane().add(menuPanel, BorderLayout.CENTER);
+    	
         getContentPane().add(panel, BorderLayout.SOUTH);
         revalidate();
         repaint();
