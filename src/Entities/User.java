@@ -17,7 +17,7 @@ public class User implements Subject {
     private List<Collection> collectionList;  
     
 	/**
-	 * @param username
+	 * @param userName
 	 * @param password
 	 * @param followingList
 	 * @param followerList
@@ -122,7 +122,7 @@ public class User implements Subject {
 	}
 	@Override
 	public String toString() {
-		return  userName + " " + password;
+		return  userName + " " + password+" " + getFollowingList();
 	}
 
 	

@@ -22,7 +22,7 @@ public class PopulateDTOExamplesWithParsedXML
    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
    {
         List<User> users = parseUsersXML();
-        System.out.println(users.get(1));
+        System.out.println(users);
    }
 
    private static List<User> parseUsersXML() throws ParserConfigurationException, SAXException, IOException
@@ -46,7 +46,7 @@ public class PopulateDTOExamplesWithParsedXML
             user = new User();
             user.setUserName(eElement.getElementsByTagName("userName").item(0).getTextContent());
             user.setPassword(eElement.getElementsByTagName("password").item(0).getTextContent());
-            
+
             //Add Employee to list
             users.add(user);
          }

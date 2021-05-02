@@ -1,10 +1,35 @@
 <users>
-  <user>
-    <userName>gurcan</userName>
-    <password>password</password>
-  </user>
-    <user>
-    <userName>aynur</userName>
-    <password>aynur123</password>
+	<user>
+		<userName>gurcan</userName>
+		<password>password</password>
+		<followings><string>aynur</string>
+		<string>gul</string></followings>
+		<followers><string>aynur</string>
+		</followers>
+		<likedOutfits><int>2</int>
+		</likedOutfits>
+		<dislikedOutfits><int>1</int>
+		</dislikedOutfits>
+		<collections>
+			<name>playlist3</name>
+			<outfits><int>2</int>
+			</outfits>
+		</collections>
+	</user>
+	<user>
+		<userName>aynur</userName>
+		<password>aynur123</password>
+		<followings>
+		</followings>
+		<followers>
+		</followers>
+		<likedOutfits><int>2</int>
+		</likedOutfits>
+		<dislikedOutfits>
+		</dislikedOutfits>
+		<collections>
+			<outfits>
+			</outfits>
+		</collections>
   </user>
 </users>

@@ -2,6 +2,8 @@ package FileIO;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -14,10 +16,13 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import Entities.User;
+
 public class ParseUnknownXMLStructure
-{
+{      static List<User> users = new ArrayList<User>();
+
    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
-   {
+   {  
       //Get Docuemnt Builder
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = factory.newDocumentBuilder();
@@ -37,11 +42,14 @@ public class ParseUnknownXMLStructure
       System.out.println("============================");
       
       visitChildNodes(nList);
+      
+      System.out.println(users);
    }
 
    //This function is called recursively
    private static void visitChildNodes(NodeList nList)
-   {
+   {List<User> users = new ArrayList<User>();
+   User user = null;
       for (int temp = 0; temp < nList.getLength(); temp++)
       {
          Node node = nList.item(temp);
@@ -56,6 +64,16 @@ public class ParseUnknownXMLStructure
                {
                    Node tempNode = nodeMap.item(i);
                    System.out.println("Attr name : " + tempNode.getNodeName()+ "; Value = " + tempNode.getNodeValue());
+                   user = new User();
+                   if(tempNode.getNodeName().equals("userName")) {
+                	   user.setUserName(tempNode.getNodeValue());
+                	   users.add(user);
+                   }
+                   
+                   //user.setUserName(tempNode.getNodeValue());
+                  // user.setPassword(eElement.getElementsByTagName("password").item(0).getTextContent());
+                   
+                   
                }
                if (node.hasChildNodes()) {
                   //We got more childs; Let's visit them as well
