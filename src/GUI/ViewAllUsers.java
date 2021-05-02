@@ -4,7 +4,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 
-public class MyProfile extends JPanel {
+public class ViewAllUsers extends JPanel {
 	  /**
 	 * 
 	 */
@@ -14,7 +14,7 @@ public class MyProfile extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public MyProfile(MainFrame mainFrame) {
+	public ViewAllUsers(MainFrame mainFrame) {
 		this.setMainFrame(mainFrame);        
 		JPanel jP=  new JPanel(new GridLayout(3, 1));
 	}

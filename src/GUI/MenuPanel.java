@@ -26,6 +26,8 @@ public class MenuPanel extends JPanel {
 	  private LoginPanel loginPanel;
 	  private JTextField userName;
 	  private JPasswordField password;
+	  JMenuItem mnıtmNewMenuItem_3;
+	  JMenuItem mnıtmNewMenuItem_1;
 
 	public MenuPanel(MainFrame mainFrame) {
 				this.setMainFrame(mainFrame);        
@@ -79,13 +81,13 @@ public class MenuPanel extends JPanel {
 		        JMenu mnNewMenu_2 = new JMenu("Collections");
 		        menuBar.add(mnNewMenu_2);
 		        
-		        JMenuItem mnıtmNewMenuItem_1 = new JMenuItem("All Collection");
+		        mnıtmNewMenuItem_1 = new JMenuItem("All Collection");
 		        mnNewMenu_2.add(mnıtmNewMenuItem_1);
 		        
 		        JMenuItem mnıtmNewMenuItem_2 = new JMenuItem("My Collections");
 		        mnNewMenu_2.add(mnıtmNewMenuItem_2);
 		        
-		        JMenuItem mnıtmNewMenuItem_3 = new JMenuItem("Add A Collection");
+		        mnıtmNewMenuItem_3 = new JMenuItem("Add A Collection");
 		        mnNewMenu_2.add(mnıtmNewMenuItem_3);
 		        
 		        JMenuItem mnıtmNewMenuItem_4 = new JMenuItem("Remove A Collection");
@@ -103,6 +105,9 @@ public class MenuPanel extends JPanel {
 		        
 		        JMenuItem mnıtmNewMenuItem_17 = new JMenuItem("The most followed user");
 		        mnNewMenu_5.add(mnıtmNewMenuItem_17);
+		        
+		        JMenuItem mnıtmNewMenuItem = new JMenuItem("View All Users");
+		        mnNewMenu_5.add(mnıtmNewMenuItem);
 		        //User user = new User();
 		        //user.getserName
 		        
@@ -206,4 +211,17 @@ public class MenuPanel extends JPanel {
 	public void setPassword(JPasswordField password) {
 		this.password = password;
 	}
+	
+	
+	public void addAllCollectionActionListener(ActionListener actionListener){
+		mnıtmNewMenuItem_3.addActionListener(actionListener);
+    }
+
+    public void addAllCollectionsActionListener(ActionListener actionListener){
+    	mnıtmNewMenuItem_1.addActionListener(actionListener);
+    }
+
+    public void addLogoutActionListener(ActionListener actionListener){
+       // logoutButton.addActionListener(actionListener);
+    }
 }
