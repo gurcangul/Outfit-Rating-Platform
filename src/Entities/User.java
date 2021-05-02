@@ -42,10 +42,7 @@ public class User implements Subject {
         		user.getLikedOutfitList(), user.getDislikedOutfitList(), user.getCollectionList());
 
     }
-	
-    
-    
-	
+		
 	public List<String> getFollowingList() {
 		return followingList;
 	}
@@ -121,7 +118,5 @@ public class User implements Subject {
 		this.password = password;
 	}
 
-
-	
 	
 }

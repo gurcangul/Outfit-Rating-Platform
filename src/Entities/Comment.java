@@ -7,23 +7,25 @@ import Observer.Observer;
 import Observer.Subject;
 
 public class Comment implements Subject {
+    private List<Observer> observerList = new ArrayList<>();
 
 	@Override
 	public void attach(Observer o) {
-		// TODO Auto-generated method stub
+    	observerList.add(o);
 		
 	}
 
 	@Override
 	public void detach(Observer o) {
-		// TODO Auto-generated method stub
+    	observerList.remove(o);
 		
 	}
 
 	@Override
 	public void notifyUpdate(Object arg) {
-		// TODO Auto-generated method stub
-		
+		for(Observer o: observerList) {
+            o.update(arg);
+        }		
 	}
     
 }
