@@ -43,6 +43,9 @@ public class User implements Subject {
 
     }
 		
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 	public List<String> getFollowingList() {
 		return followingList;
 	}
@@ -116,6 +119,10 @@ public class User implements Subject {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return  userName + " " + password;
 	}
 
 	
